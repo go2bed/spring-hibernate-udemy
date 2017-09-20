@@ -9,8 +9,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MyApp {
 
     public static void main(String[] args) {
+
+        //load spring confg file
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
-        BaseBallCoach baseBallCoach = (BaseBallCoach) applicationContext.getBean("myCoach");
+
+        //retrieve bean from spring container
+        Coach baseBallCoach = applicationContext.getBean("myCoach", Coach.class);
+
+        //call methods
         System.out.println(baseBallCoach.getDailyWorkout());
+
+        //close context
+        applicationContext.close();
     }
 }
