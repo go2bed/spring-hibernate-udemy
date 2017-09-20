@@ -5,8 +5,10 @@ package com.epam.java.spring;
  */
 public class TrackCoach implements Coach {
 
+    //Define a private field for dependency
     private  FortuneService fortuneService;
 
+    //Define a constructor for dependency injection
     public TrackCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
@@ -17,7 +19,7 @@ public class TrackCoach implements Coach {
     }
 
     @Override
-    public String getFortune() {
+    public String getDailyFortune() {
         return fortuneService.getFortune();
     }
 }

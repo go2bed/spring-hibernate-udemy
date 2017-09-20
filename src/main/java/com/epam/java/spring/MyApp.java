@@ -1,6 +1,5 @@
 package com.epam.java.spring;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -19,7 +18,8 @@ public class MyApp {
         //call methods
         System.out.println(baseBallCoach.getDailyWorkout());
 
-        System.out.println(baseBallCoach.getFortune());
+        //call methods for fortunes
+        System.out.println(baseBallCoach.getDailyFortune());
 
         //close context
         applicationContext.close();
