@@ -19,6 +19,8 @@ public class MyApp {
         //call methods
         System.out.println(baseBallCoach.getDailyWorkout());
 
+        System.out.println(baseBallCoach.getFortune());
+
         //close context
         applicationContext.close();
     }
