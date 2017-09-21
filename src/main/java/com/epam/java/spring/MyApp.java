@@ -13,7 +13,7 @@ public class MyApp {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
 
         //retrieve bean from spring container
-        Coach baseBallCoach = applicationContext.getBean("myCoach", Coach.class);
+        Coach baseBallCoach = applicationContext.getBean("myCricketCoach", Coach.class);
 
         //call methods
         System.out.println(baseBallCoach.getDailyWorkout());

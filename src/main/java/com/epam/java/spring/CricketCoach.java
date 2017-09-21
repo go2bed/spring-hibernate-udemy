@@ -7,7 +7,9 @@ public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    //create no-arg constructor
     public CricketCoach() {
+        System.out.println("CricketCoach: inside no-arg constructor");
     }
 
     public void setFortuneService(FortuneService fortuneService) {
@@ -16,11 +18,11 @@ public class CricketCoach implements Coach {
 
     @Override
     public String getDailyWorkout() {
-        return null;
+        return "practice fast bowling for 15 minutes";
     }
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return fortuneService.getFortune();
     }
 }
