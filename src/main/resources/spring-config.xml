@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="myCoach" class="com.epam.java.spring.BaseBallCoach">
+    <bean id="myCoach" class="com.epam.java.spring.TrackCoach">
         <constructor-arg name="fortuneService" ref="fortuneService"/>
     </bean>
 
@@ -12,5 +12,10 @@
     <bean id="fortuneService" class="com.epam.java.spring.HappyFortuneService">
 
     </bean>
+
+    <bean id="myCricketCoach" class="com.epam.java.spring.CricketCoach">
+        <property name="fortuneService" ref="fortuneService"/>
+    </bean>
+
 
 </beans>
