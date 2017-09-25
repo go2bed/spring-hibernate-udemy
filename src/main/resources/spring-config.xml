@@ -14,8 +14,11 @@
     </bean>
 
     <bean id="myCricketCoach" class="com.epam.java.spring.CricketCoach">
+        <!--set up setter injection-->
         <property name="fortuneService" ref="fortuneService"/>
+
+        <!--inject literal values-->
+        <property name="emailAddress" value="email@some-hosting.com"/>
+        <property name="team" value="Sunrisers Hyderabad"/>
     </bean>
-
-
 </beans>
