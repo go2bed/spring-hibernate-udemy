@@ -9,11 +9,11 @@ public class MyApp {
 
     public static void main(String[] args) {
 
-        //load spring confg file
+        //load spring config file
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
 
         //retrieve bean from spring container
-        Coach baseBallCoach = applicationContext.getBean("myCricketCoach", Coach.class);
+        Coach baseBallCoach = applicationContext.getBean("myCoach", Coach.class);
 
         //call methods
         System.out.println(baseBallCoach.getDailyWorkout());

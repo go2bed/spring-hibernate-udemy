@@ -8,11 +8,15 @@
     <context:property-placeholder location="classpath:app.properties"/>
 
     <bean id="myCoach" class="com.epam.java.spring.TrackCoach">
-        <constructor-arg name="fortuneService" ref="fortuneService"/>
+        <constructor-arg name="fortuneService" ref="randomFortuneService"/>
     </bean>
 
 
     <bean id="fortuneService" class="com.epam.java.spring.HappyFortuneService">
+
+    </bean>
+
+    <bean id="randomFortuneService" class="com.epam.java.spring.RandomFortuneService">
 
     </bean>
 
