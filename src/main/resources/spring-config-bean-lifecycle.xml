@@ -6,7 +6,7 @@
 
     <bean id="myCoach" class="com.epam.java.spring.TrackCoach"
       init-method="doMyStartupStuff"
-          destroy-method="doMyCleanupStuffYoYo">
+          destroy-method="doMyCleanupStuffYoYo" scope="prototype">
         <constructor-arg name="fortuneService" ref="fortuneService"/>
     </bean>
 
