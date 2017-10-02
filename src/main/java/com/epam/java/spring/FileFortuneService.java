@@ -2,6 +2,7 @@ package com.epam.java.spring;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,7 +16,14 @@ import java.util.Random;
 @Component
 public class FileFortuneService implements FortuneService {
 
-    private List<String> data = getDataFromFile();
+    private List<String> data;
+
+    @PostConstruct
+    public void readTheFile() {
+        System.out.println("We are in post construct  method readTheFile() ");
+        data = getDataFromFile();
+    }
+
 
     //create a random number generator
     private Random random = new Random();
@@ -25,6 +33,7 @@ public class FileFortuneService implements FortuneService {
     public String getFortune() {
         return data.get(random.nextInt(data.size()));
     }
+
 
     private List<String> getDataFromFile() {
         List<String> lines = null;
