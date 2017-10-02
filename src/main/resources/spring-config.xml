@@ -5,28 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <context:property-placeholder location="classpath:app.properties"/>
-
-    <bean id="myCoach" class="com.epam.java.spring.TrackCoach">
-        <constructor-arg name="fortuneService" ref="randomFortuneService"/>
-    </bean>
+    <!--add entry to enable component scanning-->
+    <context:component-scan base-package="com.epam.java.spring"/>
 
 
-    <bean id="fortuneService" class="com.epam.java.spring.HappyFortuneService">
+    <!--<context:annotation-config/>-->
 
-    </bean>
-
-    <bean id="randomFortuneService" class="com.epam.java.spring.RandomFortuneService">
-
-    </bean>
-
-    <bean id="myCricketCoach" class="com.epam.java.spring.CricketCoach">
-        <!--set up setter injection-->
-        <property name="fortuneService" ref="fortuneService"/>
-
-        <!--inject values from the properties-->
-        <property name="emailAddress" value="${foo.email}"/>
-        <property name="team" value="${foo.team}"/>
-
-    </bean>
 </beans>
