@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
-    final FortuneService fortuneService;
+    private FortuneService fortuneService;
 
-    //@Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
