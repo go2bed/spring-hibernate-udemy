@@ -11,4 +11,15 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.epam.java.spring")
 public class SportConfig {
 
+
+    @Bean
+    public  FortuneService happyFortuneService(){
+        return new HappyFortuneService();
+    }
+
+    @Bean
+    public Coach swimCoach(){
+        return new SwimCoach(happyFortuneService());
+    }
+
 }
