@@ -12,4 +12,9 @@ public class RagbyCoach implements Coach{
     public String getDailyWorkout() {
         return "Tried to workout all day long";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return "";
+    }
 }
